@@ -2,10 +2,13 @@ ARG         ALPINE_VERSION="${ALPINE_VERSION:-3.12}"
 FROM        alpine:"${ALPINE_VERSION}"
 
 LABEL       maintainer="https://github.com/hermsi1337"
+LABEL       fork_maintainer="https://github.com/pseudojo"
 
 ARG         OPENSSH_VERSION="${OPENSSH_VERSION:-8.3_p1-r0}"
+ARG         CURL_VERSION="${CURL_VERSION:-7.69.1-r0}"
 ENV         CONF_VOLUME="/conf.d"
 ENV         OPENSSH_VERSION="${OPENSSH_VERSION}" \
+            CURL_VERSION="${CURL_VERSION}" \
             CACHED_SSH_DIRECTORY="${CONF_VOLUME}/ssh" \
             AUTHORIZED_KEYS_VOLUME="${CONF_VOLUME}/authorized_keys" \
             ROOT_KEYPAIR_LOGIN_ENABLED="false" \
@@ -18,6 +21,8 @@ RUN         apk add --upgrade --no-cache \
                     bash-completion \
                     rsync \
                     openssh=${OPENSSH_VERSION} \
+                    curl=${CURL_VERSION} \
+                   
             && \
             mkdir -p /root/.ssh "${CONF_VOLUME}" "${AUTHORIZED_KEYS_VOLUME}" \
             && \

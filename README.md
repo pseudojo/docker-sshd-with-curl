@@ -4,6 +4,7 @@
 - Version
   - Alpine = 3.12
   - OpenSSH = 8.3_p1-r0
+  - sshpass = 1.06-r0
   - cURL = 7.69.1-r0
-- Updated at Aug 18, 2020
+- Updated at Aug 19, 2020
 

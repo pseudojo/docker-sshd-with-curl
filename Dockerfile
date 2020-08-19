@@ -9,6 +9,7 @@ ARG         SSHPASS_VERSION="${SSHPASS_VERSION:-1.06-r0}"
 ARG         CURL_VERSION="${CURL_VERSION:-7.69.1-r0}"
 ENV         CONF_VOLUME="/conf.d"
 ENV         OPENSSH_VERSION="${OPENSSH_VERSION}" \
+            SSHPASS_VERSION="${SSHPASS_VERSION}" \
             CURL_VERSION="${CURL_VERSION}" \
             CACHED_SSH_DIRECTORY="${CONF_VOLUME}/ssh" \
             AUTHORIZED_KEYS_VOLUME="${CONF_VOLUME}/authorized_keys" \
